@@ -1,3 +1,5 @@
+import { ReactiveFormsModule} from '@angular/Forms';
+import {FormsModule} from '@angular/forms';
 import { AuthRoutingModule } from './modules/auth-routing.module';
 import { AuthModule } from './modules/auth.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,6 +10,7 @@ import {HttpClientModule } from '@angular/common/http';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent],
@@ -15,7 +18,9 @@ import {HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AuthModule,
     AuthRoutingModule,
-    HttpClientModule
+    HttpClientModule, 
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
