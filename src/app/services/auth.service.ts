@@ -13,4 +13,9 @@ export class AuthService {
     return this.http.post(`${BASEURL}/register`, body);
     //reactive form module uses body - template form uses name user password
   }
+
+  loginUser(body): Observable<any> {
+    return this.http.post(`${BASEURL}/login`, body);
+  }
+  
 }
