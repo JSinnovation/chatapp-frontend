@@ -8,20 +8,17 @@ import { Router } from '@angular/router';
   templateUrl: './streams.component.html',
   styleUrls: ['./streams.component.css']
 })
-
 export class StreamsComponent implements OnInit {
   token: any;
   streamsTab = false;
   topStreamsTab = false;
-// place in the constructor below
-  constructor( 
-    private router: Router,
-    private tokenService: TokenService) { }
+  // place in the constructor below
+  constructor(private router: Router, private tokenService: TokenService) {}
 
   ngOnInit() {
-   // this.token = this.tokenService.GetToken();
-   this.token = this.tokenService.GetPayload();
-    console.log(this.token);
+    // this.token = this.tokenService.GetToken();
+    this.token = this.tokenService.GetPayload();
+    // console.log(this.token);
     this.streamsTab = true;
     this.token = this.tokenService.GetPayload();
     const tabs = document.querySelector('.tabs');
@@ -38,8 +35,5 @@ export class StreamsComponent implements OnInit {
       this.streamsTab = false;
       this.topStreamsTab = true;
     }
-    }
-   
-  } 
-
- 
+  }
+}

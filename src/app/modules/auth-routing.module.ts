@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
-import {Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { AuthTabsComponent } from '../components/auth-tabs/auth-tabs.component';
 
-const routes:Routes = [
+const routes: Routes = [
   {
-  path: '',
-  component: AuthTabsComponent
-}
+    path: '',
+    component: AuthTabsComponent
+  }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AuthRoutingModule { }
+@NgModule({ imports: [RouterModule.forRoot(routes)], exports: [RouterModule] })
+export class AuthRoutingModule {}
