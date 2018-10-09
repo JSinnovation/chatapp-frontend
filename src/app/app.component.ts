@@ -11,10 +11,10 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   constructor(
-    private router:Router, private tokenService: TokenService
+    private router: Router, private tokenService: TokenService
   ) {}
 
-ngOnInit(){
+ngOnInit(){ 
 
   const token = this.tokenService.GetToken();
   if(token) {
