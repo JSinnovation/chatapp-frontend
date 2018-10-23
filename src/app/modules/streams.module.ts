@@ -13,6 +13,10 @@ import { PostsComponent } from '../components/posts/posts.component';
 import { PostService } from '../services/post.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FollowingComponent } from '../components/following/following.component';
+import { FollowersComponent } from '../components/followers/followers.component';
+import { NotificationsComponent } from '../components/notifications/notifications.component';
+import { TopStreamsComponent } from '../components/top-streams/top-streams.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule],
@@ -23,7 +27,11 @@ import { RouterModule } from '@angular/router';
     PostFormComponent,
     PostsComponent,
     CommentsComponent,
-    PeopleComponent
+    PeopleComponent,
+    FollowingComponent,
+    FollowersComponent,
+    NotificationsComponent,
+    TopStreamsComponent
   ],
   exports: [StreamsComponent, ToolbarComponent],
   providers: [TokenService, PostService, UsersService]

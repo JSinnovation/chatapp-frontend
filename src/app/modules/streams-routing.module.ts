@@ -1,3 +1,6 @@
+import { NotificationsComponent } from './../components/notifications/notifications.component';
+import { FollowersComponent } from './../components/followers/followers.component';
+import { FollowingComponent } from './../components/following/following.component';
 import { CommentsComponent } from './../components/comments/comments.component';
 import { StreamsComponent } from './../components/streams/streams.component';
 import { NgModule } from '@angular/core';
@@ -21,6 +24,24 @@ const routes: Routes = [
   {
     path: 'people',
     component: PeopleComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'people/following',
+    component: FollowingComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'people/followers',
+    component: FollowersComponent,
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'notifications',
+    component: NotificationsComponent,
     canActivate: [AuthGuard]
   }
 ];

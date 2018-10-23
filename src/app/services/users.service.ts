@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { identifierModuleUrl } from '@angular/compiler';
 
 const BASEURL = 'http://localhost:3002/api/chatapp';
 
@@ -19,12 +20,31 @@ export class UsersService {
   }
 
   GetUserByName(username): Observable<any> {
-    return this.http.get(`${BASEURL}/user/${username}`);
+    return this.http.get(`${BASEURL}/username/${username}`);
   }
 
   FollowUser(userFollowed): Observable<any> {
     return this.http.post(`${BASEURL}/follow-user`, {
       userFollowed
     });
+  }
+
+  UnFollowUser(userFollowed): Observable<any> {
+    return this.http.post(`${BASEURL}/unfollow-user`, {
+      userFollowed
+    });
+  }
+
+  MarkNotification(id, deleteValue?): Observable <any> {
+    return this.http.post(`${BASEURL}/mark/${id}`, {
+    id,
+    deleteValue
+  }); 
+  }
+
+  MarkAllAsRead(): Observable <any> {
+    return this.http.post(`${BASEURL}/mark-all`, {
+      all: true
+  }); 
   }
 }

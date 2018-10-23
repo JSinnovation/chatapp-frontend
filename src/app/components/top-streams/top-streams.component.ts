@@ -5,14 +5,16 @@ import { PostService } from './../../services/post.service';
 import * as moment from 'moment'; //* is all
 import io from 'socket.io-client';
 import _ from 'lodash';
+
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  selector: 'app-top-streams',
+  templateUrl: './top-streams.component.html',
+  styleUrls: ['./top-streams.component.css']
 })
-export class PostsComponent implements OnInit {
+export class TopStreamsComponent implements OnInit {
+
   socket: any;
-  posts = [];
+  topPosts = [];
   user: any;
 
   constructor(private postService: PostService, private tokenService: TokenService, private router: Router) {
@@ -31,7 +33,7 @@ export class PostsComponent implements OnInit {
   AllPosts() {
     this.postService.getAllPosts().subscribe(
       data => {
-        this.posts = data.posts;
+        this.topPosts = data.top;
       },
       err => {
         if (err.error.token === null) {
@@ -62,4 +64,3 @@ TimeFromNow(time) {
   OpenCommentBox(post) {
     this.router.navigate(['post', post._id]);
   }
-}

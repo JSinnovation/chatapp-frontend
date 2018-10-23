@@ -1,7 +1,7 @@
 import { TokenService } from './../../services/token.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-//import * as M from 'materialize-css';
+import * as M from 'materialize-css';
 
 @Component({
   selector: 'app-streams',
@@ -22,7 +22,7 @@ export class StreamsComponent implements OnInit {
     this.streamsTab = true;
     this.token = this.tokenService.GetPayload();
     const tabs = document.querySelector('.tabs');
-    //M.Tabs.init(tabs, {});
+    M.Tabs.init(tabs, {});//materialize CSS
   }
 
   ChangeTabs(value) {

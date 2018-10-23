@@ -115,11 +115,21 @@ nav {
   }
   
   .markAll {
-    color: #ffffff;
+    color: #ffffff ;
     background: #64b5f6 !important;
   }
   
   li.dropdown-button {
     margin-left: 20px !important;
+  }
+  
+  .tabs a {
+    color: #64b5f6;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .tabs .active {
+    background: inherit !important;
   }
   
