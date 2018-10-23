@@ -64,3 +64,4 @@ TimeFromNow(time) {
   OpenCommentBox(post) {
     this.router.navigate(['post', post._id]);
   }
+  }
