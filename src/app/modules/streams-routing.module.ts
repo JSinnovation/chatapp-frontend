@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../services/auth.guard';
 import { PeopleComponent } from './../components/people/people.component';
+import { ChatComponent } from '../components/chat/chat.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,14 @@ const routes: Routes = [
     path: 'notifications',
     component: NotificationsComponent,
     canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'chat/:name',
+    component: ChatComponent,
+    canActivate: [AuthGuard]
   }
+
 ];
 
 @NgModule({

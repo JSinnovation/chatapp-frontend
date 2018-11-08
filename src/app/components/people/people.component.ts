@@ -50,6 +50,7 @@ export class PeopleComponent implements OnInit {
       //this.socket.emit('refresh', {});
     });
   }
+  
 
   //following array?
   CheckInArray(arr, id) {
